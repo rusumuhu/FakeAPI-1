@@ -4,7 +4,7 @@ namespace FakeAPI
 {
     class Program
     {
-        private static MeetManager meetManager;
+        public static MeetManager meetManager;
 
         static void Main(string[] args)
         {
@@ -40,6 +40,11 @@ namespace FakeAPI
 
             meetManager.AddNewMeet(user_nameMeet, user_meetTime);
 
+            foreach (var item in meetManager.GetAll())
+                {
+                    Console.WriteLine($"Имя встречи: {item.Name}");
+                    Console.WriteLine($"Имя встречи: {item.Name} \r\n");
+                }
             Console.ReadKey();
         }
     }
